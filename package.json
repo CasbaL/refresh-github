@@ -1,0 +1,13 @@
+{
+  "name": "refres-github-host",
+  "version": "0.0.1",
+  "description": "修改本地 hosts 便于访问 github",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["github", "hosts"],
+  "author": "casbal",
+  "license": "ISC",
+  "dependencies": {}
+}
