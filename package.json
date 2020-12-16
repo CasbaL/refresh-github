@@ -4,10 +4,22 @@
   "description": "修改本地 hosts 便于访问 github",
   "main": "index.js",
   "scripts": {
+    "bulid": "babel src -d dist",
+    "dev": "babel -w src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["github", "hosts"],
+  "keywords": [
+    "github",
+    "hosts"
+  ],
   "author": "casbal",
   "license": "ISC",
-  "dependencies": {}
+  "bin": {
+    "refresh-host-github": "./bin/cmd",
+    "rhg": "./bin/cmd"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
 }

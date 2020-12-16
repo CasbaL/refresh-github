@@ -50,7 +50,7 @@ ${local}
     let fd = fs.openSync(CACHE_PATH, 777)
     fs.writeSync(fd, nextHosts, 0, { encoding: 'utf-8' })
     fs.closeSync(fd)
-    // 写入host
+    // 写入host2
     exec('cat ./newhost > /etc/hosts', error => {
       console.log(error)
       console.log('github new host apply success!')
