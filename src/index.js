@@ -20,14 +20,15 @@ exec(
     }, [])
 
     console.log(`ip get: `, ips)
-    console.log('目前选择的ip', ips[1])
+    const select = 0
+    console.log('目前选择的ip', ips[select])
     // 读取本地hosts
     const local = fs.readFileSync('/etc/hosts', { encoding: 'utf-8' })
     // 匹配的正则
     const reg = /(?<=(# github-host start))([\s\S]*)(?=(# github-host end))/
     let nextHosts = ''
     // 生成插入的新host映射
-    const newHostRef = domains(ips[1])
+    const newHostRef = domains(ips[select])
     console.log('new host ref: ', newHostRef)
 
     // // 添加或修改
@@ -51,7 +52,8 @@ ${local}
     fs.writeSync(fd, nextHosts, 0, { encoding: 'utf-8' })
     fs.closeSync(fd)
     // 写入host2
-    exec('cat ./newhost > /etc/hosts', error => {
+    
+    exec(`cat ${path.resolve(__dirname, './newhost')} > /etc/hosts`, error => {
       console.log(error)
       console.log('github new host apply success!')
     })
